@@ -1,0 +1,37 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+
+CC=/usr/local/gcc-2.7.2.3/bin/gcc
+CXX=/usr/local/gcc-2.7.2.3/bin/g++
+# LD_LIBRARY_PATH=/usr/local/gcc-2.7.2/lib
+ac_add_options --disable-pedantic
+
+CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+export CFLAGS    # needed for NSPR configure
+export CXXFLAGS  # needed for NSPR configure
+
+ac_add_options --disable-debug
+ac_add_options --enable-optimize
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/opt-272
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+ac_add_options --enable-mathml
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-libart
+ac_add_options --disable-double-buffer
+
+# build PSM
+ac_add_options --enable-crypto
+
+ac_add_options --enable-extensions=all,transformiix
+
+# Commercial tree!
+mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/opt-272/
+ac_add_options --with-moz-objs=../obj/opt-272/

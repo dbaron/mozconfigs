@@ -1,0 +1,15 @@
+# export CC="/usr/local/bin/ccache gcc"
+# export CXX="/usr/local/bin/ccache g++"
+
+# -pedantic-errors -Wno-long-long
+# -W -Wno-unused-parameter
+# (CFLAGS only) -Wmissing-prototypes -Wmissing-declarations
+# export needed for NSPR configure
+if ! is_windows
+then
+	export CFLAGS="$CFLAGS -Wshadow -Wwrite-strings -fmessage-length=0"
+	export CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -Wno-invalid-offsetof"
+fi
+
+ac_add_options --disable-optimize
+ac_add_options --enable-debug

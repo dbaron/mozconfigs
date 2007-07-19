@@ -1,0 +1,4 @@
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-cairo
+# ac_add_options --enable-svg-renderer-libart
+# MOZ_INTERNAL_LIBART_LGPL=1

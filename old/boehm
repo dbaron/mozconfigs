@@ -1,0 +1,38 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+ac_add_options --enable-application=suite
+
+CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+export CFLAGS    # needed for NSPR configure
+export CXXFLAGS  # needed for NSPR configure
+
+# Options for client.mk.
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/boehm/
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+# Options for 'configure' (same as command-line options).
+ac_add_options --enable-mathml
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-libart
+ac_add_options --enable-extensions=all
+
+# build PSM
+ac_add_options --enable-crypto
+
+# Boehm GC
+ac_add_options --enable-boehm
+ac_add_options --enable-cpp-rtti
+
+# clobber plugin, gfx, and widget when changing these:
+# ac_add_options --with-xlib
+# ac_add_options --enable-toolkit=xlib
+
+# Commercial tree!
+mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/boehm/
+ac_add_options --with-moz-objs=../obj/boehm/

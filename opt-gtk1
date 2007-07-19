@@ -1,0 +1,39 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+ac_add_options --enable-application=suite
+
+. $(dirname $MOZCONFIG)/common
+. $(dirname $MOZCONFIG)/common-opt
+
+# Options for 'configure' (same as command-line options).
+ac_add_options --enable-optimize="-O2" # -march=pentiumpro"
+ac_add_options --disable-debug
+
+if_enable_jprof
+
+# # Old, build-everything variant:
+# ac_add_options --enable-extensions=all
+ac_add_options --enable-mathml
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-libart
+mk_add_options MOZ_INTERNAL_LIBART_LGPL=1
+MOZ_INTERNAL_LIBART_LGPL=1
+
+# Minimal-build variant:
+#ac_add_options --disable-mailnews
+# ac_add_options --disable-composer
+# ac_add_options --enable-plaintext-editor-only
+ac_add_options --disable-jsd
+ac_add_options --disable-ldap
+ac_add_options --disable-accessibility
+ac_add_options --disable-tests
+ac_add_options --disable-xprint
+ac_add_options --enable-extensions=default,-irc,-venkman,-content-packs,-pref,-universalchardet
+
+ac_add_options --enable-crypto
+
+# --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
+# --disable-double-buffer

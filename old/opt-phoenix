@@ -1,0 +1,52 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+
+CC=/usr/local/gcc-3.3.2/bin/gcc
+CXX=/usr/local/gcc-3.3.2/bin/g++
+export CC # in case it helps
+export CXX # in case it helps
+
+# -pedantic-errors -Wno-long-long
+# -W -Wno-unused-parameter
+# (CFLAGS only) -Wmissing-prototypes -Wmissing-declarations
+CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+export CFLAGS    # needed for NSPR configure
+export CXXFLAGS  # needed for NSPR configure
+
+. $topsrcdir/browser/config/mozconfig
+
+# Options for client.mk.
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/opt-phoenix/
+mk_add_options MOZ_CO_MODULE="SeaMonkeyAll mozilla/tools/trace-malloc mozilla/tools/rb mozilla/tools/jprof mozilla/mail mozilla/composer"
+mk_add_options MOZ_INTERNAL_LIBART_LGPL=1
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+MOZ_MAKE_FLAGS=-j2
+# mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+# Options for 'configure' (same as command-line options).
+ac_add_options --enable-optimize="-Os" # -march=pentiumpro"
+ac_add_options --disable-debug
+
+ac_add_options --enable-xft
+ac_add_options --disable-freetype2
+MOZ_ENABLE_COREXFONTS=
+ac_add_options --enable-default-toolkit=gtk2
+
+ac_add_options --enable-jprof
+
+ac_add_options --disable-jsd
+ac_add_options --disable-accessibility
+ac_add_options --disable-tests
+ac_add_options --disable-xprint
+
+# --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
+# --disable-double-buffer
+
+# Commercial tree!
+mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/opt-phoenix/
+ac_add_options --with-moz-objs=../obj/opt-phoenix/

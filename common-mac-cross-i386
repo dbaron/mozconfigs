@@ -1,0 +1,15 @@
+# Use the next four lines if cross-compiling for Intel on a PowerPC:
+CC="gcc-4.0 -arch i386"
+CXX="g++-4.0 -arch i386"
+ac_add_options --target=i386-apple-darwin8.0.0
+ac_add_options --enable-macos-sdk=/Developer/SDKs/MacOSX10.4u.sdk
+
+# This section remains the same for either type of cross-compilation.
+HOST_CC="gcc-4.0"
+HOST_CXX="g++-4.0"
+RANLIB=ranlib
+AR=ar
+AS=$CC
+LD=ld
+STRIP="strip -x -S"
+CROSS_COMPILE=1

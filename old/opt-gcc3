@@ -1,0 +1,41 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+ac_add_options --enable-application=suite
+
+CC=/usr/local/gcc-3.0.4/bin/gcc
+CXX=/usr/local/gcc-3.0.4/bin/g++
+
+CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+export CFLAGS    # needed for NSPR configure
+export CXXFLAGS  # needed for NSPR configure
+
+# Options for client.mk.
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/opt-gcc3/
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+# Options for 'configure' (same as command-line options).
+ac_add_options --enable-optimize="-O2 -march=pentiumpro"
+ac_add_options --disable-debug
+
+ac_add_options --enable-jprof
+ac_add_options --enable-mathml
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-libart
+
+ac_add_options --enable-extensions=default,irc
+
+# build PSM
+ac_add_options --enable-crypto
+
+# --with-gtk --with-xlib --enable-toolkit=gtk
+# --disable-double-buffer
+
+# Commercial tree!
+mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/opt-gcc3/
+ac_add_options --with-moz-objs=../obj/opt-gcc3/

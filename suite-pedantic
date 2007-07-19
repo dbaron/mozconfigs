@@ -1,0 +1,46 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+ac_add_options --enable-application=suite
+
+CFLAGS="$CFLAGS -pedantic-errors -Wno-long-long -std=c99 -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -pedantic-errors -Wno-long-long -std=c99 -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+export CFLAGS    # needed for NSPR configure
+export CXXFLAGS  # needed for NSPR configure
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/pedantic/
+mk_add_options MOZ_CO_MODULE="SeaMonkeyAll mozilla/tools/trace-malloc mozilla/tools/rb mozilla/tools/jprof"
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+MOZ_MAKE_FLAGS=-j2
+# mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+ac_add_options --enable-mathml
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-libart
+MOZ_INTERNAL_LIBART_LGPL=1
+mk_add_options MOZ_INTERNAL_LIBART_LGPL=1
+ac_add_options --disable-double-buffer
+
+ac_add_options --enable-xft
+ac_add_options --disable-freetype2
+MOZ_ENABLE_COREXFONTS=
+
+# ac_add_options --enable-boehm
+# ac_add_options --enable-cpp-rtti
+if_enable_trace_malloc
+
+ac_add_options --enable-crypto
+
+ac_add_options --enable-extensions=all
+
+# --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
+
+#evil!
+# if_enable_jprof
+
+# Commercial tree!
+mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/pedantic/
+ac_add_options --with-moz-objs=../obj/pedantic/

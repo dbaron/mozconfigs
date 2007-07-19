@@ -1,0 +1,47 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+ac_add_options --enable-application=suite
+
+# eazel profiler at:
+#  cvs -z3 -d :pserver:anonymous@anoncvs.gnome.org:/cvs/gnome co eazel-tools
+# according to imoT
+# see also bug 69055
+
+# CC=/usr/local/gcc-3_0-20010409/bin/gcc
+# CXX=/usr/local/gcc-3_0-20010409/bin/g++
+
+CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+export CFLAGS    # needed for NSPR configure
+export CXXFLAGS  # needed for NSPR configure
+
+ac_add_options --enable-eazel-profiler
+ac_add_options --with-profile-modules=layout,content,htmlparser,xpcom,rdf,xpfe,js,gfx,widget,netwerk
+
+# Options for client.mk.
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/eazel/
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+# Options for 'configure' (same as command-line options).
+ac_add_options --enable-optimize="-O2 -march=pentiumpro"
+
+ac_add_options --enable-mathml
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-libart
+
+ac_add_options --enable-extensions=all
+
+# build PSM
+ac_add_options --enable-crypto
+
+# --with-gtk --with-xlib --enable-toolkit=gtk
+# --disable-double-buffer
+
+# Commercial tree!
+mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/eazel/
+ac_add_options --with-moz-objs=../obj/eazel/

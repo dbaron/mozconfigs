@@ -1,0 +1,13 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+
+. $(dirname $MOZCONFIG)/common-sunbird
+. $(dirname $MOZCONFIG)/common
+. $(dirname $MOZCONFIG)/common-debugopt
+# . $(dirname $MOZCONFIG)/common-gtk2+xft
+
+if_enable_trace_malloc
+if_enable_jprof

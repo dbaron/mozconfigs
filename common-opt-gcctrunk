@@ -1,0 +1,9 @@
+export CC=/usr/local/gcc-3.5-20040603/bin/gcc
+export CXX=/usr/local/gcc-3.5-20040603/bin/g++
+
+# export needed for NSPR configure
+export CFLAGS="$CFLAGS -Wshadow -Wwrite-strings -fmessage-length=0"
+export CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -Wno-invalid-offsetof"
+
+ac_add_options --enable-optimize="-O2" # -march=pentiumpro"
+ac_add_options --disable-debug

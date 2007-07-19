@@ -1,0 +1,31 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+ac_add_options --enable-application=suite
+
+. $(dirname $MOZCONFIG)/common
+. $(dirname $MOZCONFIG)/common-opt
+# . $(dirname $MOZCONFIG)/common-gtk2+xft
+
+# # Old, build-everything variant:
+# ac_add_options --enable-extensions=all
+ac_add_options --enable-mathml
+. $(dirname $MOZCONFIG)/common-svg
+
+# Minimal-build variant:
+#ac_add_options --disable-mailnews
+# ac_add_options --disable-composer
+# ac_add_options --enable-plaintext-editor-only
+#ac_add_options --disable-jsd
+#ac_add_options --disable-ldap
+#ac_add_options --disable-accessibility
+#ac_add_options --enable-extensions=default,-irc,-venkman,-content-packs,-pref,-universalchardet
+
+if_enable_jprof
+
+ac_add_options --enable-crypto
+
+# --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
+# --disable-double-buffer

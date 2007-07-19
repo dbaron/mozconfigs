@@ -1,0 +1,21 @@
+# vim: set sw=4 ts=4 noet:
+
+if [ -f $topsrcdir/browser/config/mozconfig ]
+then
+	. $topsrcdir/browser/config/mozconfig
+else
+	echo "*******************************************************************************" 1>&2
+	echo "Warning: $topsrcdir/browser/config/mozconfig does not exist." 1>&2
+	echo "*******************************************************************************" 1>&2
+fi
+
+#if [ "$(hostname)" == "ridley" ]
+#then
+#	ac_add_options --disable-places
+#fi
+
+# trunk (post-1.8) icon only works with VC8
+if [ "$MOZ_MSVCVERSION" != "7.1" ]
+then
+	ac_add_options --enable-official-branding
+fi

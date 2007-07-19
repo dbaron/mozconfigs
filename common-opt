@@ -1,0 +1,23 @@
+# export CC="/usr/local/bin/ccache /usr/local/gcc-3.4.2/bin/gcc"
+# export CXX="/usr/local/bin/ccache /usr/local/gcc-3.4.2/bin/g++"
+# export CC="/usr/local/gcc-3.4.3/bin/gcc"
+# export CXX="/usr/local/gcc-3.4.3/bin/g++"
+
+# -pedantic-errors -Wno-long-long
+# -W -Wno-unused-parameter
+# (CFLAGS only) -Wmissing-prototypes -Wmissing-declarations
+if ! is_windows
+then
+	export CFLAGS="$CFLAGS -Wshadow -Wwrite-strings -fmessage-length=0"
+	export CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -Wno-invalid-offsetof -Wno-strict-aliasing"
+fi
+
+if is_windows
+then
+	ac_add_options --enable-optimize
+else
+	ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer" # -march=pentiumpro"
+fi
+ac_add_options --disable-debug
+
+ac_add_options --disable-tests

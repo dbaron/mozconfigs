@@ -1,0 +1,11 @@
+ac_add_options --enable-application=suite # ???
+
+. $topsrcdir/embedding/minimo/mozconfig
+
+mk_add_options MOZ_CO_MODULE="SeaMonkeyAll mozilla/tools/trace-malloc mozilla/tools/codesighs"
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/minimo-nondebug-g/
+
+ac_add_options --disable-debug
+ac_add_options --enable-optimize="-g"
+ac_add_options --disable-strip
+if_enable_trace_malloc

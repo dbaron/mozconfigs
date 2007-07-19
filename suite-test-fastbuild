@@ -1,0 +1,55 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+ac_add_options --enable-application=suite
+
+CC=/usr/local/gcc-3.0.4/bin/gcc
+CXX=/usr/local/gcc-3.0.4/bin/g++
+
+CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+export CFLAGS    # needed for NSPR configure
+export CXXFLAGS  # needed for NSPR configure
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/test-fastbuild/
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+ac_add_options --disable-debug
+
+ac_add_options --enable-ldap
+ac_add_options --enable-mathml
+ac_add_options --enable-svg
+ac_add_options --enable-svg-renderer-libart
+ac_add_options --enable-xsl
+ac_add_options --enable-extensions=all
+# ac_add_options --enable-perf-metrics
+
+# build PSM
+ac_add_options --enable-crypto
+
+# Boehm GC
+#ac_add_options --enable-boehm
+#ac_add_options --enable-cpp-rtti
+
+
+ac_add_options --with-gtk
+ac_add_options --with-xlib
+ac_add_options --with-qt
+ac_add_options --with-qtdir=/usr/lib/qt-2.3.0
+# ac_add_options --with-motif
+
+ac_add_options --enable-toolkit=gtk
+
+ac_add_options --with-xprint
+
+
+# kinda evil considering this is a debug build, but perhaps useful
+if_enable_jprof
+
+# Commercial tree!
+mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/test-fastbuild/
+ac_add_options --with-moz-objs=../obj/test-fastbuild/

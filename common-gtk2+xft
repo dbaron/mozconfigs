@@ -1,0 +1,7 @@
+ac_add_options --enable-default-toolkit=gtk2
+
+# None of these actually still matter (checked on trunk, October 2006).
+ac_add_options --enable-xft
+ac_add_options --disable-freetype2
+MOZ_ENABLE_COREXFONTS=
+ac_add_options --disable-xprint

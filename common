@@ -1,0 +1,69 @@
+mk_add_options MOZ_CO_PROJECT="all"
+mk_add_options MOZ_CO_MODULE="mozilla/tools/trace-malloc mozilla/tools/rb mozilla/tools/jprof mozilla/other-licenses/libart_lgpl mozilla/js/tests mozilla/tools/footprint"
+
+VCMOZCONFIGEXT=""
+if [ "$MOZ_MSVCVERSION" != "" ]
+then
+	VCMOZCONFIGEXT="-vc$MOZ_MSVCVERSION"
+fi
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/$(basename $MOZCONFIG)$VCMOZCONFIGEXT/
+
+# Commercial tree!
+#mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/$(basename $MOZCONFIG)/
+#ac_add_options --with-moz-objs=../obj/$(basename $MOZCONFIG)/
+
+ac_add_options --disable-libxul
+ac_add_options --disable-airbag
+
+# cls says -jN where N is cpus+1
+mk_add_options MOZ_MAKE_FLAGS=-j2
+MOZ_MAKE_FLAGS=-j2
+# mk_add_options RUN_AUTOCONF_LOCALLY=1
+
+ac_add_options --prefix=$topsrcdir/../obj/$(basename $MOZCONFIG)/dist-install/
+
+# no longer needed for i386 Linux with gcc update to 4.1.1
+# no longer needed for x86_64 Linux with Fedora Core 6
+#if [ "$(uname -sm)" = "Linux x86_64" ]
+#then
+#	ac_cv_visibility_pragma=no
+#fi
+
+is_windows()
+{
+	if [ "$(uname -s | cut -b1-6)" = "CYGWIN" -o "$(uname -s | cut -b1-7)" = "MINGW32" ]
+	then
+		return 0
+	fi
+	return 1
+}
+
+if is_windows
+then
+	if [ "x$MOZ_MSVCVERSION" = "x" -o "$MOZ_MSVCVERSION" = "6" -o "$MOZ_MSVCVERSION" = "7.1" ]
+	then
+		ac_add_options --disable-airbag
+	fi
+fi
+
+if_enable_jprof()
+{
+	if [ "$(uname -sm)" = "Linux i686" ]
+	then
+		ac_add_options --enable-jprof
+	fi
+}
+
+if_enable_trace_malloc()
+{
+	if [ "$(uname -sm)" = "Linux i686" ]
+	then
+		ac_add_options --enable-trace-malloc
+	fi
+}
+
+if [ "$(uname -s)" = "Linux" ]
+then
+        ac_add_options --enable-dbus
+fi
