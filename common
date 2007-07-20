@@ -71,3 +71,9 @@ if [ "$(uname -s)" = "Linux" ]
 then
         ac_add_options --enable-dbus
 fi
+
+# trunk (post-1.8) icon doesn't work with VC7.1 or VC8
+if is_windows
+then
+        ac_add_options --disable-official-branding
+fi
