@@ -4,10 +4,10 @@
 # See http://www.mozilla.org/build/unix.html for build instructions.
 #
 
-. $(dirname $MOZCONFIG)/common-firefox
-. $(dirname $MOZCONFIG)/common
-. $(dirname $MOZCONFIG)/common-opt
-# . $(dirname $MOZCONFIG)/common-gtk2+xft
+. "$(dirname $MOZCONFIG)/common-firefox"
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-opt"
+# . "$(dirname $MOZCONFIG)/common-gtk2+xft"
 
 ac_add_options --enable-static
 ac_add_options --disable-shared

@@ -21,7 +21,7 @@ mk_add_options MOZ_MAKE_FLAGS=-j2
 MOZ_MAKE_FLAGS=-j2
 # mk_add_options RUN_AUTOCONF_LOCALLY=1
 
-ac_add_options --prefix=$topsrcdir/../obj/$(basename $MOZCONFIG)/dist-install/
+ac_add_options --prefix="$topsrcdir/../obj/$(basename "$MOZCONFIG")/dist-install/"
 
 # no longer needed for i386 Linux with gcc update to 4.1.1
 # no longer needed for x86_64 Linux with Fedora Core 6

@@ -17,7 +17,7 @@ CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-stri
 export CFLAGS    # needed for NSPR configure
 export CXXFLAGS  # needed for NSPR configure
 
-. $topsrcdir/browser/config/mozconfig
+. "$topsrcdir/browser/config/mozconfig"
 
 # Options for client.mk.
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/firefox-opt-standards-only/

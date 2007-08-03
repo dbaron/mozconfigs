@@ -5,14 +5,14 @@
 #
 ac_add_options --enable-application=suite
 
-. $(dirname $MOZCONFIG)/common
-. $(dirname $MOZCONFIG)/common-opt
-# . $(dirname $MOZCONFIG)/common-gtk2+xft
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-opt"
+# . "$(dirname $MOZCONFIG)/common-gtk2+xft"
 
 # # Old, build-everything variant:
 # ac_add_options --enable-extensions=all
 ac_add_options --enable-mathml
-. $(dirname $MOZCONFIG)/common-svg
+. "$(dirname $MOZCONFIG)/common-svg"
 
 # Minimal-build variant:
 #ac_add_options --disable-mailnews

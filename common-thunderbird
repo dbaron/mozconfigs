@@ -1,7 +1,7 @@
 
-if [ -f $topsrcdir/mail/config/mozconfig ]
+if [ -f "$topsrcdir/mail/config/mozconfig" ]
 then
-	. $topsrcdir/mail/config/mozconfig
+	. "$topsrcdir/mail/config/mozconfig"
 else
 	echo "*******************************************************************************" 1>&2
 	echo "Warning: $topsrcdir/mail/config/mozconfig does not exist." 1>&2

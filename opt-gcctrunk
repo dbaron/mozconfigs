@@ -5,8 +5,8 @@
 #
 ac_add_options --enable-application=suite
 
-. $(dirname $MOZCONFIG)/common
-. $(dirname $MOZCONFIG)/common-opt-gcctrunk
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-opt-gcctrunk"
 
 ac_add_options --enable-xft
 ac_add_options --disable-freetype2

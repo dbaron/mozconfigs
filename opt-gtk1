@@ -5,8 +5,8 @@
 #
 ac_add_options --enable-application=suite
 
-. $(dirname $MOZCONFIG)/common
-. $(dirname $MOZCONFIG)/common-opt
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-opt"
 
 # Options for 'configure' (same as command-line options).
 ac_add_options --enable-optimize="-O2" # -march=pentiumpro"

@@ -4,17 +4,17 @@
 # See http://www.mozilla.org/build/unix.html for build instructions.
 #
 
-. $(dirname $MOZCONFIG)/common-firefox
-. $(dirname $MOZCONFIG)/common
-. $(dirname $MOZCONFIG)/common-debugopt
-# . $(dirname $MOZCONFIG)/common-gtk2+xft
+. "$(dirname $MOZCONFIG)/common-firefox"
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-debugopt"
+# . "$(dirname $MOZCONFIG)/common-gtk2+xft"
 
 export CFLAGS="$CFLAGS -DTOO_MUCH_GC -DWAY_TOO_MUCH_GC"
 export CXXFLAGS="$CXXFLAGS -DTOO_MUCH_GC -DWAY_TOO_MUCH_GC"
 
 ac_add_options --enable-mathml
 ac_add_options --enable-canvas
-. $(dirname $MOZCONFIG)/common-svg
+. "$(dirname $MOZCONFIG)/common-svg"
 
 if_enable_trace_malloc
 if_enable_jprof

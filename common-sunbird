@@ -1,7 +1,7 @@
 
-if [ -f $topsrcdir/calendar/sunbird/config/mozconfig ]
+if [ -f "$topsrcdir/calendar/sunbird/config/mozconfig" ]
 then
-	. $topsrcdir/calendar/sunbird/config/mozconfig
+	. "$topsrcdir/calendar/sunbird/config/mozconfig"
 else
 	echo "*******************************************************************************" 1>&2
 	echo "Warning: $topsrcdir/calendar/sunbird/config/mozconfig does not exist." 1>&2
