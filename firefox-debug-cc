@@ -1,0 +1,23 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+
+. "$(dirname $MOZCONFIG)/common-firefox"
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-debug"
+# . "$(dirname $MOZCONFIG)/common-gtk2+xft"
+
+ac_add_options --enable-mathml
+ac_add_options --enable-canvas
+. "$(dirname $MOZCONFIG)/common-svg"
+
+export CFLAGS="$CFLAGS -DDEBUG_CC"
+export CXXFLAGS="$CXXFLAGS -DDEBUG_CC"
+
+if_enable_trace_malloc
+if_enable_jprof
+
+# ac_add_options --disable-tests
+ac_add_options --enable-extensions=default,layout-debug
