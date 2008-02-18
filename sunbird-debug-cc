@@ -1,0 +1,3 @@
+. "$(dirname $MOZCONFIG)/sunbird-debug"
+export CFLAGS="$CFLAGS -DDEBUG_CC"
+export CXXFLAGS="$CXXFLAGS -DDEBUG_CC"
