@@ -61,7 +61,7 @@ if_enable_jprof()
 if_enable_trace_malloc()
 {
 	UNAME="$(uname -sm)"
-	if [ "$UNAME" = "Linux i686" -o "$UNAME" = "Darwin Power Macintosh" -o "$UNAME" = "Darwin i386" ]
+	if [ "$UNAME" = "Linux i686" -o "$UNAME" = "Linux x86_64" -o "$UNAME" = "Darwin Power Macintosh" -o "$UNAME" = "Darwin i386" ]
 	then
 		ac_add_options --enable-trace-malloc
 	fi
