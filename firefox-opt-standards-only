@@ -41,6 +41,8 @@ ac_add_options --enable-default-toolkit=gtk2
 
 if_enable_jprof
 
+ac_add_options --enable-extensions=default,inspector
+
 ac_add_options --disable-jsd
 ac_add_options --disable-accessibility
 ac_add_options --disable-tests
