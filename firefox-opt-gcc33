@@ -25,4 +25,3 @@ if_enable_jprof
 export CC=/usr/local/gcc-3.3.6/bin/gcc
 export CXX=/usr/local/gcc-3.3.6/bin/g++
 export CXXFLAGS=$(echo $CXXFLAGS | sed -e's/-Wno-invalid-offsetof//')
-export CXXFLAGS=$(echo $CXXFLAGS | sed -e's/-Wno-strict-aliasing//')

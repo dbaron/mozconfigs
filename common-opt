@@ -9,7 +9,7 @@
 if ! is_windows
 then
 	export CFLAGS="$CFLAGS -Wshadow -Wwrite-strings -fmessage-length=0"
-	export CXXFLAGS="$CXXFLAGS -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -Wno-invalid-offsetof -Wno-strict-aliasing"
+	export CXXFLAGS="$CXXFLAGS -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -Wno-invalid-offsetof"
 	if [ "$(uname -s)" != "Darwin" ]
 	then
 		# On Mac, -fuse-cxa-atexit causes linker errors
