@@ -7,3 +7,5 @@ export CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwri
 
 ac_add_options --enable-optimize="-O2" # -march=pentiumpro"
 ac_add_options --disable-debug
+
+if_enable_jprof

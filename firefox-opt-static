@@ -17,8 +17,6 @@ ac_add_options --enable-svg
 ac_add_options --enable-svg-renderer-libart
 MOZ_INTERNAL_LIBART_LGPL=1
 
-if_enable_jprof
-
 ac_add_options --enable-extensions=default,inspector
 
 ac_add_options --disable-jsd
