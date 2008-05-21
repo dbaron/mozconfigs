@@ -14,8 +14,5 @@ ac_add_options --enable-mathml
 ac_add_options --enable-canvas
 . "$(dirname $MOZCONFIG)/common-svg"
 
-if_enable_trace_malloc
-if_enable_jprof
-
 # ac_add_options --disable-tests
 ac_add_options --enable-extensions=default,layout-debug,inspector

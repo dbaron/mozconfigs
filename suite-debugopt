@@ -12,9 +12,6 @@ ac_add_options --enable-application=suite
 ac_add_options --enable-mathml
 . "$(dirname $MOZCONFIG)/common-svg"
 
-if_enable_trace_malloc
-if_enable_jprof
-
 ac_add_options --enable-crypto
 
 ac_add_options --enable-extensions=default,layout-debug
