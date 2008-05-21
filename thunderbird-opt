@@ -1,0 +1,12 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+
+. "$(dirname $MOZCONFIG)/common-thunderbird"
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-opt"
+# . "$(dirname $MOZCONFIG)/common-gtk2+xft"
+
+if_enable_jprof
