@@ -14,8 +14,6 @@ ac_add_options --enable-mathml
 
 # ac_add_options --enable-boehm
 # ac_add_options --enable-cpp-rtti
-if_enable_trace_malloc
-if_enable_jprof
 
 ac_add_options --enable-crypto
 

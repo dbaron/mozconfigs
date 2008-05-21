@@ -8,6 +8,3 @@
 . "$(dirname $MOZCONFIG)/common"
 . "$(dirname $MOZCONFIG)/common-debug"
 # . "$(dirname $MOZCONFIG)/common-gtk2+xft"
-
-if_enable_trace_malloc
-if_enable_jprof

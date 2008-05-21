@@ -19,13 +19,9 @@ ac_add_options --disable-freetype2
 
 # ac_add_options --enable-boehm
 # ac_add_options --enable-cpp-rtti
-if_enable_trace_malloc
 
 ac_add_options --enable-crypto
 
 # ac_add_options --enable-extensions=all
 
 # --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
-
-#evil!
-# if_enable_jprof
