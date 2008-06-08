@@ -76,6 +76,11 @@ then
         ac_add_options --enable-dbus
 fi
 
+if [ "$(uname -s)" = "Darwin" ]
+then
+        ac_add_options --enable-shark
+fi
+
 # trunk (post-1.8) icon doesn't work with VC7.1 or VC8
 if is_windows
 then
