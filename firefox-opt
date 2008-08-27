@@ -13,7 +13,7 @@ ac_add_options --enable-mathml
 ac_add_options --enable-canvas
 . "$(dirname $MOZCONFIG)/common-svg"
 
-ac_add_options --enable-extensions=default,inspector
+#ac_add_options --enable-extensions=default,inspector
 
 #ac_add_options --disable-jsd
 #ac_add_options --disable-accessibility
