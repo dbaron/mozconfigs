@@ -3,9 +3,12 @@ if [ -f "$topsrcdir/mail/config/mozconfig" ]
 then
 	. "$topsrcdir/mail/config/mozconfig"
 else
-	echo "*******************************************************************************" 1>&2
-	echo "Warning: $topsrcdir/mail/config/mozconfig does not exist." 1>&2
-	echo "*******************************************************************************" 1>&2
+	if [ ! -d "$topsrcdir/mozilla/.hg" ]
+	then
+		echo "*******************************************************************************" 1>&2
+		echo "Warning: $topsrcdir/mail/config/mozconfig does not exist." 1>&2
+		echo "*******************************************************************************" 1>&2
+	fi
 	ac_add_options --enable-application=mail
 fi
 
