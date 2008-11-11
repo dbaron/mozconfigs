@@ -1,0 +1,7 @@
+# https://developer.mozilla.org/en/Compiling_32-bit_Firefox_on_a_Linux_64-bit_OS
+
+export PKG_CONFIG_LIBDIR=/usr/lib/pkgconfig:/usr/share/pkgconfig 
+CC="gcc -m32"
+CXX="g++ -m32"
+ac_add_options --x-libraries=/usr/lib
+ac_add_options --target=i686-pc-linux
