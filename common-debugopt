@@ -22,7 +22,12 @@ then
 	exit 1
 fi
 
-ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer"
+if [ "$(uname -sm)" = "Linux i686" ]
+then
+	ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer"
+else
+	ac_add_options --enable-optimize="-O2"
+fi
 ac_add_options --enable-debug
 
 if_enable_trace_malloc

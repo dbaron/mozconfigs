@@ -22,7 +22,12 @@ if is_windows
 then
 	ac_add_options --enable-optimize
 else
-	ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer" # -march=pentiumpro"
+	if [ "$(uname -sm)" = "Linux i686" ]
+	then
+		ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer" # -march=pentiumpro"
+	else
+		ac_add_options --enable-optimize="-O2" # -march=pentiumpro"
+	fi
 fi
 ac_add_options --disable-debug
 
