@@ -1,0 +1,24 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+
+. "$(dirname $MOZCONFIG)/common-firefox"
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-opt"
+ac_add_options --enable-debugger-info-modules
+# . "$(dirname $MOZCONFIG)/common-gtk2+xft"
+
+ac_add_options --enable-mathml
+ac_add_options --enable-canvas
+. "$(dirname $MOZCONFIG)/common-svg"
+
+#ac_add_options --enable-extensions=default,inspector
+
+#ac_add_options --disable-jsd
+#ac_add_options --disable-accessibility
+# ac_add_options --disable-tests
+
+# --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
+# --disable-double-buffer
