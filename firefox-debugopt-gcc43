@@ -1,3 +1,0 @@
-. "$(dirname $MOZCONFIG)/firefox-debugopt"
-export CC=/usr/local/gcc-4.3.0/bin/gcc
-export CXX=/usr/local/gcc-4.3.0/bin/g++
