@@ -1,0 +1,2 @@
+. "$(dirname $MOZCONFIG)/firefox-debugopt"
+. "$(dirname $MOZCONFIG)/common-gcc44"
