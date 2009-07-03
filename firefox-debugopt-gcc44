@@ -1,2 +1,4 @@
 . "$(dirname $MOZCONFIG)/firefox-debugopt"
 . "$(dirname $MOZCONFIG)/common-gcc44"
+
+export CXXFLAGS="$CXXFLAGS -std=gnu++0x"
