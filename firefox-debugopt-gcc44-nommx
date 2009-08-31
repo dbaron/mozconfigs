@@ -1,7 +1,8 @@
 . "$(dirname $MOZCONFIG)/firefox-debugopt"
 . "$(dirname $MOZCONFIG)/common-gcc44"
 
-# -mno-sse implies no-sse2, etc., but -mno-mmx doesn't imply them (but should)
+# -mno-sse implies no-sse2, etc., but -mno-mmx doesn't imply them (but
+# should, see http://gcc.gnu.org/bugzilla/show_bug.cgi?id=41202 )
 # Doesn't actually work on x86_64 since glibc depends on SSE.
 export CFLAGS="$CFLAGS -mno-mmx -mno-sse"
 export CXXFLAGS="$CXXFLAGS -mno-mmx -mno-sse"
