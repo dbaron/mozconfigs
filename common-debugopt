@@ -24,9 +24,9 @@ fi
 
 if [ "$(uname -sm)" = "Linux i686" ]
 then
-	ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer"
+	ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer -march=native -mtune=native"
 else
-	ac_add_options --enable-optimize="-O2"
+	ac_add_options --enable-optimize="-O2 -march=native -mtune=native"
 fi
 ac_add_options --enable-debug
 
