@@ -18,9 +18,16 @@ ac_add_options --disable-libxul
 ac_add_options --disable-airbag
 ac_add_options --disable-crashreporter
 
+case "$(uname -s)" in
+    Linux) NCORES=$(grep "^processor	: " /proc/cpuinfo | wc -l);;
+    Darwin) NCORES=$(sysctl hw.ncpu);;
+    *) NCORES=2;;
+esac
+echo NCORES is $NCORES
+
 # cls says -jN where N is cpus+1
-mk_add_options MOZ_MAKE_FLAGS=-j2
-MOZ_MAKE_FLAGS=-j2
+MOZ_MAKE_FLAGS=-j$(($NCORES + 1))
+mk_add_options MOZ_MAKE_FLAGS=$MOZ_MAKE_FLAGS
 # mk_add_options RUN_AUTOCONF_LOCALLY=1
 
 ac_add_options --prefix="$topsrcdir/../obj/$(basename "$MOZCONFIG")/dist-install/"
