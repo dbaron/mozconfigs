@@ -23,7 +23,6 @@ case "$(uname -s)" in
     Darwin) NCORES=$(sysctl hw.ncpu);;
     *) NCORES=2;;
 esac
-echo NCORES is $NCORES
 
 # cls says -jN where N is cpus+1
 MOZ_MAKE_FLAGS=-j$(($NCORES + 1))
