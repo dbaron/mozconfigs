@@ -26,9 +26,8 @@ case "$(uname -s)" in
     *) NCORES=2;;
 esac
 
-# cls says -jN where N is cpus+1
-MOZ_MAKE_FLAGS=-j$(($NCORES + 1))
-mk_add_options MOZ_MAKE_FLAGS=$MOZ_MAKE_FLAGS
+MAKE_J_OPTION=$(($NCORES + 1))
+
 # mk_add_options RUN_AUTOCONF_LOCALLY=1
 
 ac_add_options --prefix="$topsrcdir/../obj/$(basename "$MOZCONFIG")/dist-install/"
@@ -46,7 +45,12 @@ then
 	CXX="distcc x86_64-linux-gnu-g++-4.3"
 	export CC
 	export CXX
+	MAKE_J_OPTION=$(distcc -j)
 fi
+
+# cls says -jN where N is cpus+1
+MOZ_MAKE_FLAGS=-j$MAKE_J_OPTION
+mk_add_options MOZ_MAKE_FLAGS=$MOZ_MAKE_FLAGS
 
 is_windows()
 {
