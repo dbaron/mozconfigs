@@ -40,6 +40,14 @@ ac_add_options --prefix="$topsrcdir/../obj/$(basename "$MOZCONFIG")/dist-install
 #	ac_cv_visibility_pragma=no
 #fi
 
+if [ "$(hostname)" = "pickering" ]
+then
+	CC="distcc x86_64-linux-gnu-gcc-4.3"
+	CXX="distcc x86_64-linux-gnu-g++-4.3"
+	export CC
+	export CXX
+fi
+
 is_windows()
 {
 	if [ "$(uname -s | cut -b1-6)" = "CYGWIN" -o "$(uname -s | cut -b1-7)" = "MINGW32" ]
