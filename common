@@ -14,6 +14,7 @@ mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/$(basename $MOZCONFIG)$VCMOZCONFIGE
 #ac_add_options --with-moz-objs=../obj/$(basename $MOZCONFIG)/
 
 ac_add_options --disable-libxul
+ac_add_options --disable-ipc
 
 ac_add_options --disable-airbag
 ac_add_options --disable-crashreporter
