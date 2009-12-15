@@ -5,3 +5,6 @@ CC="gcc -m32"
 CXX="g++ -m32"
 ac_add_options --x-libraries=/usr/lib
 ac_add_options --target=i686-pc-linux
+
+# work around https://bugzilla.mozilla.org/show_bug.cgi?id=530982
+export CROSS_COMPILE=1
