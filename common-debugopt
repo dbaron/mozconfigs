@@ -22,11 +22,20 @@ then
 	exit 1
 fi
 
+# distcc won't distribute compilation with -march=native, so figure out
+# what -march=native means
+ARCH=$(gcc -march=native -E -dM -x c++ /dev/null | grep "define __tune" | sed 's/^#define __tune_\(.*\)__ 1$/\1/')
+ARCHOPTS=
+if [ -n "$ARCH" ]
+then
+    ARCHOPTS="-march=$ARCH -mtune=$ARCH"
+fi
+
 if [ "$(uname -sm)" = "Linux i686" ]
 then
-	ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer -march=native -mtune=native"
+	ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer $ARCHOPTS"
 else
-	ac_add_options --enable-optimize="-O2 -march=native -mtune=native"
+	ac_add_options --enable-optimize="-O2 $ARCHOPTS"
 fi
 ac_add_options --enable-debug
 
