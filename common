@@ -42,8 +42,8 @@ ac_add_options --prefix="$topsrcdir/../obj/$(basename "$MOZCONFIG")/dist-install
 
 if [ "$(hostname)" = "pickering" ]
 then
-	CC="distcc x86_64-linux-gnu-gcc-4.3"
-	CXX="distcc x86_64-linux-gnu-g++-4.3"
+	CC="distcc x86_64-linux-gnu-gcc-4.4"
+	CXX="distcc x86_64-linux-gnu-g++-4.4"
 	export CC
 	export CXX
 	MAKE_J_OPTION=$(distcc -j)
