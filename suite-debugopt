@@ -13,5 +13,3 @@ ac_add_options --enable-mathml
 . "$(dirname $MOZCONFIG)/common-svg"
 
 ac_add_options --enable-crypto
-
-ac_add_options --enable-extensions=default,layout-debug
