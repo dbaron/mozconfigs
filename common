@@ -19,6 +19,8 @@ ac_add_options --disable-ipc
 ac_add_options --disable-airbag
 ac_add_options --disable-crashreporter
 
+ac_add_options --with-debug-label=dbaron
+
 case "$(uname -s)" in
     # Linux) NCORES=$(grep "^processor	: " /proc/cpuinfo | wc -l);;
     # Also see http://stackoverflow.com/questions/150355/programmatically-find-the-number-of-cores-on-a-machine
