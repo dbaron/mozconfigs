@@ -9,6 +9,22 @@ fi
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/$(basename $MOZCONFIG)$VCMOZCONFIGEXT/
 
+# -pedantic-errors -Wno-long-long
+# -W -Wno-unused-parameter
+# (CFLAGS only) -Wmissing-prototypes -Wmissing-declarations
+# export needed for NSPR configure
+if ! is_windows
+then
+	export CFLAGS="$CFLAGS -Wshadow -Wwrite-strings -fmessage-length=0"
+	export CXXFLAGS="$CXXFLAGS -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -Wno-invalid-offsetof"
+	if [ "$(uname -s)" != "Darwin" ]
+	then
+		# On Mac, -fuse-cxa-atexit causes linker errors
+		# (undefined symbols: ___dso_handle)
+		export CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit"
+	fi
+fi
+
 # Commercial tree!
 #mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/$(basename $MOZCONFIG)/
 #ac_add_options --with-moz-objs=../obj/$(basename $MOZCONFIG)/
