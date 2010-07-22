@@ -15,8 +15,8 @@ mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../obj/$(basename $MOZCONFIG)$VCMOZCONFIGE
 # export needed for NSPR configure
 if ! is_windows
 then
-	export CFLAGS="$CFLAGS -Wshadow -Wwrite-strings -fmessage-length=0"
-	export CXXFLAGS="$CXXFLAGS -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -Wno-invalid-offsetof"
+	export CFLAGS="$CFLAGS -Wshadow -Wwrite-strings -fmessage-length=0 -fdiagnostics-show-option"
+	export CXXFLAGS="$CXXFLAGS -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0 -fdiagnostics-show-option -Wno-invalid-offsetof"
 	if [ "$(uname -s)" != "Darwin" ]
 	then
 		# On Mac, -fuse-cxa-atexit causes linker errors
