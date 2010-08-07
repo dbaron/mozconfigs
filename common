@@ -97,6 +97,14 @@ if_enable_jprof()
 	fi
 }
 
+if_enable_valgrind()
+{
+	if [ "$(uname -s)" = "Linux" ]
+	then
+		ac_add_options --enable-valgrind
+	fi
+}
+
 if_enable_trace_malloc()
 {
 	UNAME="$(uname -sm)"
