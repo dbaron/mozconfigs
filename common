@@ -1,3 +1,12 @@
+is_windows()
+{
+	if [ "$(uname -s | cut -b1-6)" = "CYGWIN" -o "$(uname -s | cut -b1-7)" = "MINGW32" ]
+	then
+		return 0
+	fi
+	return 1
+}
+
 mk_add_options MOZ_CO_PROJECT="all"
 mk_add_options MOZ_CO_MODULE="mozilla/tools/trace-malloc mozilla/tools/rb mozilla/tools/jprof mozilla/other-licenses/libart_lgpl mozilla/js/tests mozilla/tools/footprint"
 
@@ -70,15 +79,6 @@ fi
 # cls says -jN where N is cpus+1
 MOZ_MAKE_FLAGS=-j$MAKE_J_OPTION
 mk_add_options MOZ_MAKE_FLAGS=$MOZ_MAKE_FLAGS
-
-is_windows()
-{
-	if [ "$(uname -s | cut -b1-6)" = "CYGWIN" -o "$(uname -s | cut -b1-7)" = "MINGW32" ]
-	then
-		return 0
-	fi
-	return 1
-}
 
 if is_windows
 then
