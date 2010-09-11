@@ -40,6 +40,8 @@ MOZ_ENABLE_COREXFONTS=
 ac_add_options --enable-default-toolkit=gtk2
 
 if_enable_jprof
+if_enable_callgrind
+if_enable_shark
 
 #ac_add_options --enable-extensions=default,inspector
 

@@ -49,6 +49,8 @@ ac_add_options --with-xprint
 
 # kinda evil considering this is a debug build, but perhaps useful
 if_enable_jprof
+if_enable_callgrind
+if_enable_shark
 
 # Commercial tree!
 mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/test-fastbuild/

@@ -98,6 +98,22 @@ if_enable_jprof()
 	fi
 }
 
+if_enable_callgrind()
+{
+	if [ "$(uname -s)" = "Linux" ]
+	then
+		ac_add_options --enable-callgrind
+	fi
+}
+
+if_enable_shark()
+{
+	if [ "$(uname -s)" = "Darwin" ]
+	then
+		ac_add_options --enable-shark
+	fi
+}
+
 if_enable_valgrind()
 {
 	if [ "$(uname -s)" = "Linux" ]

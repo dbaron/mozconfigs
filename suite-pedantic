@@ -40,6 +40,8 @@ ac_add_options --enable-extensions=all
 
 #evil!
 # if_enable_jprof
+# if_enable_callgrind
+# if_enable_shark
 
 # Commercial tree!
 mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/pedantic/

@@ -19,3 +19,5 @@ ac_add_options --disable-debug
 ac_add_options --disable-tests
 
 if_enable_jprof
+if_enable_callgrind
+if_enable_shark
