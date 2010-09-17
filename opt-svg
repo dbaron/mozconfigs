@@ -25,7 +25,7 @@ MOZ_MAKE_FLAGS=-j2
 # mk_add_options RUN_AUTOCONF_LOCALLY=1
 
 # Options for 'configure' (same as command-line options).
-ac_add_options --enable-optimize="-Os" # -march=pentiumpro"
+ac_add_options --enable-optimize
 ac_add_options --disable-debug
 
 ac_add_options --enable-xft

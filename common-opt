@@ -7,11 +7,21 @@ if is_windows
 then
 	ac_add_options --enable-optimize
 else
+
+	# distcc won't distribute compilation with -march=native, so figure out
+	# what -march=native means
+	ARCH=$(gcc -march=native -E -dM -x c++ /dev/null | grep "define __tune" | sed 's/^#define __tune_\(.*\)__ 1$/\1/')
+	ARCHOPTS=
+	if [ -n "$ARCH" ]
+	then
+		ARCHOPTS="-march=$ARCH -mtune=$ARCH"
+	fi
+
 	if [ "$(uname -sm)" = "Linux i686" ]
 	then
-		ac_add_options --enable-optimize="-O2 -fno-omit-frame-pointer" # -march=pentiumpro"
+		ac_add_options --enable-optimize="-O3 $ARCHOPTS -fno-omit-frame-pointer"
 	else
-		ac_add_options --enable-optimize="-O2" # -march=pentiumpro"
+		ac_add_options --enable-optimize="-O3 $ARCHOPTS"
 	fi
 fi
 ac_add_options --disable-debug
