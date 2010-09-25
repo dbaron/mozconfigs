@@ -78,8 +78,8 @@ then
 fi
 
 # cls says -jN where N is cpus+1
-MOZ_MAKE_FLAGS=-j$MAKE_J_OPTION
-mk_add_options MOZ_MAKE_FLAGS=$MOZ_MAKE_FLAGS
+MOZ_MAKE_FLAGS="-j$MAKE_J_OPTION -s"
+mk_add_options MOZ_MAKE_FLAGS="$MOZ_MAKE_FLAGS"
 
 if is_windows
 then
