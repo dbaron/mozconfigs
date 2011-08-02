@@ -1,4 +1,4 @@
-ac_add_options --with-android-ndk="/usr/local/android-ndk-r4c"
+ac_add_options --with-android-ndk="/usr/local/android-ndk-r6"
 ac_add_options --with-android-sdk="/usr/local/android-sdk-linux_x86/platforms/android-8"
 
 # android options
