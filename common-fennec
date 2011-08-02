@@ -1,0 +1,5 @@
+# vim: set sw=4 ts=4 noet:
+
+ac_add_options --enable-application=mobile
+ac_add_options --enable-official-branding
+ac_add_options --disable-tests

@@ -1,0 +1,10 @@
+ac_add_options --with-android-ndk="/usr/local/android-ndk-r4c"
+ac_add_options --with-android-sdk="/usr/local/android-sdk-linux_x86/platforms/android-8"
+
+# android options
+ac_add_options --target=arm-android-eabi
+ac_add_options --with-endian=little
+
+# Needed to run on ARMv5 or ARMv6 devices.
+ac_add_options --disable-thumb2
+ac_add_options --disable-methodjit # maybe --disable-polyic instead?
