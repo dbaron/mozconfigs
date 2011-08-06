@@ -10,6 +10,7 @@ ac_add_options --target=arm-linux-androideabi
 ac_add_options --with-endian=little
 
 # Needed to run on LG Optimus V (ARM1136)
+# http://www.arm.com/products/processors/classic/arm11/arm1136.php
 ac_add_options --with-thumb=no # needed?  (Has Thumb, but not Thumb2)
 ac_add_options --with-arch=armv6j
 ac_add_options --disable-methodjit # maybe --disable-polyic instead?
