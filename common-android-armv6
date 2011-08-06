@@ -9,6 +9,8 @@ ac_add_options --with-android-platform="/usr/local/android-ndk-r6/platforms/andr
 ac_add_options --target=arm-linux-androideabi
 ac_add_options --with-endian=little
 
-# Needed to run on ARMv5 or ARMv6 devices.
-ac_add_options --disable-thumb2
+# Needed to run on LG Optimus V (ARM1136)
+ac_add_options --with-thumb=no # needed?  (Has Thumb, but not Thumb2)
+ac_add_options --with-arch=armv6j
 ac_add_options --disable-methodjit # maybe --disable-polyic instead?
+ac_add_options --disable-tracejit # Probably not needed?
