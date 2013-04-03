@@ -1,0 +1,5 @@
+. "$(dirname $MOZCONFIG)/common-fennec"
+. "$(dirname $MOZCONFIG)/common"
+. "$(dirname $MOZCONFIG)/common-android"
+ac_add_options --disable-optimize
+ac_add_options --enable-debug
