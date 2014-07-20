@@ -26,7 +26,7 @@ ac_add_options --enable-xft
 ac_add_options --disable-freetype2
 MOZ_ENABLE_COREXFONTS=
 
-if_enable_trace_malloc
+# if_enable_trace_malloc
 
 # Minimal-build variant:
 ac_add_options --disable-mailnews

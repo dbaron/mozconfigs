@@ -30,7 +30,7 @@ MOZ_ENABLE_COREXFONTS=
 
 # ac_add_options --enable-boehm
 # ac_add_options --enable-cpp-rtti
-if_enable_trace_malloc
+# if_enable_trace_malloc
 
 ac_add_options --enable-crypto
 
