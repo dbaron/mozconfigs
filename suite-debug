@@ -9,13 +9,8 @@ ac_add_options --enable-application=suite
 . "$(dirname $MOZCONFIG)/common-debug"
 # . "$(dirname $MOZCONFIG)/common-gtk2+xft"
 
-ac_add_options --enable-mathml
-. "$(dirname $MOZCONFIG)/common-svg"
-
 # ac_add_options --enable-boehm
 # ac_add_options --enable-cpp-rtti
-
-ac_add_options --enable-crypto
 
 ac_add_options --enable-extensions=all
 

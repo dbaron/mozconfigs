@@ -11,8 +11,6 @@ ac_add_options --enable-application=suite
 
 # # Old, build-everything variant:
 # ac_add_options --enable-extensions=all
-ac_add_options --enable-mathml
-. "$(dirname $MOZCONFIG)/common-svg"
 
 # Minimal-build variant:
 #ac_add_options --disable-mailnews
@@ -22,8 +20,6 @@ ac_add_options --enable-mathml
 #ac_add_options --disable-ldap
 #ac_add_options --disable-accessibility
 #ac_add_options --enable-extensions=default,-irc,-venkman,-content-packs,-pref,-universalchardet
-
-ac_add_options --enable-crypto
 
 # --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
 # --disable-double-buffer

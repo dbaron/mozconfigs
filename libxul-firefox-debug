@@ -9,10 +9,6 @@
 . "$(dirname $MOZCONFIG)/common-debug"
 # . "$(dirname $MOZCONFIG)/common-gtk2+xft"
 
-ac_add_options --enable-mathml
-ac_add_options --enable-canvas
-. "$(dirname $MOZCONFIG)/common-svg"
-
 # ac_add_options --disable-tests
 
 ac_add_options --enable-libxul

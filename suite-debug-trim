@@ -24,12 +24,6 @@ MOZ_MAKE_FLAGS=-j2
 ac_add_options --disable-optimize
 ac_add_options --enable-debug
 
-ac_add_options --enable-mathml
-ac_add_options --enable-svg
-ac_add_options --enable-svg-renderer-libart
-MOZ_INTERNAL_LIBART_LGPL=1
-mk_add_options MOZ_INTERNAL_LIBART_LGPL=1
-
 ac_add_options --enable-xft
 ac_add_options --disable-freetype2
 MOZ_ENABLE_COREXFONTS=
@@ -43,8 +37,6 @@ ac_add_options --disable-accessibility
 ac_add_options --disable-tests
 ac_add_options --disable-xprint
 ac_add_options --enable-extensions=default,-irc,-venkman,-content-packs,-pref,-universalchardet
-
-ac_add_options --enable-crypto
 
 # Commercial tree!
 mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/debug-trim/

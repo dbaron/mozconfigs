@@ -39,8 +39,6 @@ ac_add_options --disable-tests
 ac_add_options --disable-xprint
 ac_add_options --enable-extensions=default,-irc,-venkman,-content-packs,-pref,-universalchardet
 
-ac_add_options --enable-crypto
-
 # --enable-toolkit-gtk --enable-toolkit-xlib --enable-toolkit=gtk
 
 #evil!

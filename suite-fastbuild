@@ -23,10 +23,6 @@ mk_add_options RUN_AUTOCONF_LOCALLY=1
 ac_add_options --disable-debug
 ac_add_options --disable-optimize
 
-ac_add_options --enable-mathml
-ac_add_options --enable-svg
-ac_add_options --enable-svg-renderer-libart
-
 ac_add_options --enable-extensions=all
 
 # --with-gtk --with-xlib --enable-toolkit=gtk

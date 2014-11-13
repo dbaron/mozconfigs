@@ -25,10 +25,6 @@ ac_add_options --disable-debug
 ac_add_options --enable-strip-libs
 ac_add_options --enable-elf-dynstr-gc
 
-ac_add_options --enable-mathml
-# ac_add_options --enable-svg
-# ac_add_options --enable-svg-renderer-libart
-
 ac_add_options --enable-xft
 ac_add_options --disable-freetype2
 MOZ_ENABLE_COREXFONTS=
@@ -36,9 +32,6 @@ MOZ_ENABLE_COREXFONTS=
 ac_add_options --disable-tests
 
 ac_add_options --enable-extensions=all
-
-# build PSM
-ac_add_options --enable-crypto
 
 # Commercial tree!
 mk_add_options NS_OBJDIR=@TOPSRCDIR@/../obj-ns/distrib/
