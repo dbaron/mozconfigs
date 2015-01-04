@@ -3,3 +3,4 @@
 . "$(dirname $MOZCONFIG)/common-android-armv6"
 ac_add_options --disable-optimize
 ac_add_options --enable-debug
+ac_add_options --disable-official-branding
