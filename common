@@ -9,6 +9,7 @@ is_windows()
 
 mk_add_options MOZ_CO_PROJECT="all"
 mk_add_options MOZ_CO_MODULE="mozilla/tools/trace-malloc mozilla/tools/rb mozilla/tools/jprof mozilla/other-licenses/libart_lgpl mozilla/js/tests mozilla/tools/footprint"
+mk_add_options AUTOCLOBBER=1
 
 VCMOZCONFIGEXT=""
 if [ "$MOZ_MSVCVERSION" != "" ]
