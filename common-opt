@@ -10,7 +10,7 @@ else
 
 	# distcc won't distribute compilation with -march=native, so figure out
 	# what -march=native means
-	ARCH=$(gcc -march=native -E -dM -x c++ /dev/null | grep "define __tune" | sed 's/^#define __tune_\(.*\)__ 1$/\1/')
+	ARCH=$(gcc -march=native -E -dM -x c++ /dev/null | grep "define __tune" | grep -v "__tune_core_avx2__" | sed 's/^#define __tune_\(.*\)__ 1$/\1/')
 	ARCHOPTS=
 	if [ -n "$ARCH" ]
 	then
