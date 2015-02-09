@@ -16,14 +16,6 @@ else
 	then
 		ARCHOPTS="-march=$ARCH -mtune=$ARCH"
 	fi
-	if [ "$ARCH" = "haswell" ]
-	then
-		# Work around bug 680547 / bug 1111355, for which we really only
-		# need to change the compilation options for
-		# xptcinvoke_x86_64_unix.cpp (if only the pragmas were supported
-		# on x86_64 like i386).
-		ARCH="corei7"
-	fi
 
 	if [ "$(uname -sm)" = "Linux i686" ]
 	then

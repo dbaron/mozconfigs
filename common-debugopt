@@ -10,14 +10,6 @@ fi
 # what -march=native means
 ARCH=$(gcc -march=native -E -dM -x c++ /dev/null | grep "define __tune" | grep -v "__tune_core_avx2__" | sed 's/^#define __tune_\(.*\)__ 1$/\1/')
 ARCHOPTS=
-if [ "$ARCH" = "haswell" ]
-then
-	# Work around bug 680547 / bug 1111355, for which we really only
-	# need to change the compilation options for
-	# xptcinvoke_x86_64_unix.cpp (if only the pragmas were supported
-	# on x86_64 like i386).
-	ARCH="corei7"
-fi
 if [ -n "$ARCH" ]
 then
     ARCHOPTS="-march=$ARCH -mtune=$ARCH"
