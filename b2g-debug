@@ -4,6 +4,8 @@
 # See http://www.mozilla.org/build/unix.html for build instructions.
 #
 
+# See https://developer.mozilla.org/en-US/Firefox_OS/Building_the_B2G_desktop_client#Create_a_mozconfig
+
 . "$(dirname $MOZCONFIG)/common"
 . "$(dirname $MOZCONFIG)/common-debug"
 
