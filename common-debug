@@ -4,7 +4,6 @@
 ac_add_options --disable-optimize
 ac_add_options --enable-debug
 
-if_enable_trace_malloc
 if_enable_jprof
 if_enable_callgrind
 if_enable_shark
