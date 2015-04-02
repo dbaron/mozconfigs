@@ -122,6 +122,7 @@ if_enable_valgrind()
 	if [ "$(uname -s)" = "Linux" ]
 	then
 		ac_add_options --enable-valgrind
+		ac_add_options --disable-jemalloc
 	fi
 }
 
