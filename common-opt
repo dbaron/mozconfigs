@@ -10,7 +10,16 @@ else
 
 	# distcc won't distribute compilation with -march=native, so figure out
 	# what -march=native means
-	ARCH=$(gcc -march=native -E -dM -x c++ /dev/null | grep "define __tune" | grep -v "__tune_core_avx2__" | sed 's/^#define __tune_\(.*\)__ 1$/\1/')
+	ARCH=$(gcc -march=native -E -dM -x c++ /dev/null | grep "define __tune" | sed 's/^#define __tune_\(.*\)__ 1$/\1/')
+	
+	if [ "x$ARCH" = "$(printf "xcorei7\nnehalem")" ]
+	then
+		# per processor_alias_table in
+		# https://gcc.gnu.org/git/?p=gcc.git;a=blob_plain;f=gcc/config/i386/i386.c;hb=c1283af40b65f1ad862cf5b27e2d9ed10b2076b6
+		# nehalem and corei7 are the same thing
+		ARCH="nehalem"
+	fi
+	
 	ARCHOPTS=
 	if [ -n "$ARCH" ]
 	then
