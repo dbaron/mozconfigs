@@ -18,6 +18,14 @@ then
     ARCH="nehalem"
 fi
 
+if [ "x$ARCH" = "$(printf "xhaswell\ncore_avx2")" ]
+then
+    # per processor_alias_table in
+    # https://gcc.gnu.org/git/?p=gcc.git;a=blob_plain;f=gcc/config/i386/i386.c;hb=c1283af40b65f1ad862cf5b27e2d9ed10b2076b6
+    # haswell and core-avx2 are the same thing
+    ARCH="haswell"
+fi
+
 ARCHOPTS=
 if [ -n "$ARCH" ]
 then
