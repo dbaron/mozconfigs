@@ -43,8 +43,6 @@ fi
 #ac_add_options --disable-ipc
 #ac_add_options --enable-chrome-format=jar
 
-ac_add_options --disable-crashreporter
-
 ac_add_options --with-debug-label=dbaron
 
 case "$(uname -s)" in
@@ -80,15 +78,6 @@ fi
 # cls says -jN where N is cpus+1
 MOZ_MAKE_FLAGS="-j$MAKE_J_OPTION -s"
 mk_add_options MOZ_MAKE_FLAGS="$MOZ_MAKE_FLAGS"
-
-if is_windows
-then
-	if [ "x$MOZ_MSVCVERSION" = "x" -o "$MOZ_MSVCVERSION" = "6" -o "$MOZ_MSVCVERSION" = "7.1" ]
-	then
-		ac_add_options --disable-airbag
-		ac_add_options --disable-crashreporter
-	fi
-fi
 
 if_enable_jprof()
 {
