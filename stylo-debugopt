@@ -9,3 +9,5 @@ then
 	# Necessary on mac with Xcode >= 7 to avoid errors linking libXUL.
 	export LDFLAGS=-Wl,-no_compact_unwind
 fi
+
+export LLVM_CONFIG="/usr/bin/llvm-config-3.9"
