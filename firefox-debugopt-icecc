@@ -1,0 +1,8 @@
+# sh
+# Build configuration script
+#
+# See http://www.mozilla.org/build/unix.html for build instructions.
+#
+
+. "$(dirname $MOZCONFIG)/firefox-debugopt"
+. "$(dirname $MOZCONFIG)/common-icecc"

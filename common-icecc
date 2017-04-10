@@ -1,0 +1,6 @@
+export CC=/usr/lib/icecc/bin/gcc"
+export CXX=/usr/lib/icecc/bin/g++"
+
+# override previous -j option
+MOZ_MAKE_FLAGS="-s"
+mk_add_options MOZ_MAKE_FLAGS="$MOZ_MAKE_FLAGS"
