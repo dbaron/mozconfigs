@@ -53,7 +53,7 @@ case "$(uname -s)" in
     *) NCORES=2;;
 esac
 
-MAKE_J_OPTION=$(($NCORES + 1))
+MAKE_J_OPTION=$(($NCORES - 0))
 
 # mk_add_options RUN_AUTOCONF_LOCALLY=1
 

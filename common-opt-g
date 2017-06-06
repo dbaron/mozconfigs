@@ -36,9 +36,9 @@ else
 
 	if [ "$(uname -sm)" = "Linux i686" ]
 	then
-		ac_add_options --enable-optimize="-Os -g $ARCHOPTS -fno-omit-frame-pointer"
+		ac_add_options --enable-optimize="-O2 -g $ARCHOPTS -fno-omit-frame-pointer"
 	else
-		ac_add_options --enable-optimize="-Os -g $ARCHOPTS"
+		ac_add_options --enable-optimize="-O2 -g $ARCHOPTS"
 	fi
 fi
 ac_add_options --disable-debug
