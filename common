@@ -151,4 +151,12 @@ then
 	export LDFLAGS=-Wl,-no_compact_unwind
 fi
 
-export LLVM_CONFIG="/usr/bin/llvm-config-3.9"
+if is_windows
+then
+	HOME_WIN=$(echo "$HOME" | sed 's,^/\([a-z]\)/,\1:/,')
+	ac_add_options --with-libclang-path="$HOME_WIN/.mozbuild/clang/bin"
+	ac_add_options --with-clang-path="$HOME_WIN/.mozbuild/clang/bin/clang.exe"
+	export LLVM_CONFIG="$HOME/.mozbuild/clang/bin/llvm-config.exe"
+else
+	export LLVM_CONFIG="/usr/bin/llvm-config-3.9"
+fi
