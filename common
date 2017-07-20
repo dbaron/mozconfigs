@@ -143,7 +143,7 @@ then
 fi
 
 # Stylo options
-ac_add_options --enable-stylo
+ac_add_options --enable-stylo=build
 mk_add_options CARGOFLAGS="--color always" # if you want colored output from rust compilation
 if [ "$(uname -s)" = "Darwin" ]
 then
