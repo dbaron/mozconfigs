@@ -13,7 +13,7 @@ CXX=/usr/local/gcc-3.0.4/bin/g++
 # LD_LIBRARY_PATH=/usr/local/gcc-3_0/lib:${LD_LIBRARY_PATH}
 
 CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
-CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -Wwrite-strings -fmessage-length=0"
 export CFLAGS    # needed for NSPR configure
 export CXXFLAGS  # needed for NSPR configure
 

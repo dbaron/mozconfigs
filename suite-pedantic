@@ -6,7 +6,7 @@
 ac_add_options --enable-application=suite
 
 CFLAGS="$CFLAGS -pedantic-errors -Wno-long-long -std=c99 -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
-CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -pedantic-errors -Wno-long-long -std=c99 -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -pedantic-errors -Wno-long-long -std=c99 -Wshadow -Wwrite-strings -fmessage-length=0"
 export CFLAGS    # needed for NSPR configure
 export CXXFLAGS  # needed for NSPR configure
 

@@ -10,7 +10,7 @@ CXX=/usr/local/gcc-3.2.2/bin/g++
 
 # -pedantic-errors -Wno-long-long
 CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
-CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -Wwrite-strings -fmessage-length=0"
 export CFLAGS    # needed for NSPR configure
 export CXXFLAGS  # needed for NSPR configure
 

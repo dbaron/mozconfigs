@@ -10,7 +10,7 @@ CXX=/usr/local/gcc-2.7.2.3/bin/g++
 ac_add_options --disable-pedantic
 
 CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
-CXXFLAGS="$CXXFLAGS -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -Wshadow -Wwrite-strings -fmessage-length=0"
 export CFLAGS    # needed for NSPR configure
 export CXXFLAGS  # needed for NSPR configure
 

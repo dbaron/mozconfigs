@@ -9,7 +9,7 @@ CC=/usr/local/gcc-3.0.4/bin/gcc
 CXX=/usr/local/gcc-3.0.4/bin/g++
 
 CFLAGS="$CFLAGS -Wshadow -fno-builtin-index -Wwrite-strings -fmessage-length=0"
-CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -fno-nonansi-builtins -Wwrite-strings -fmessage-length=0"
+CXXFLAGS="$CXXFLAGS -fuse-cxa-atexit -Wshadow -Wwrite-strings -fmessage-length=0"
 export CFLAGS    # needed for NSPR configure
 export CXXFLAGS  # needed for NSPR configure
 
