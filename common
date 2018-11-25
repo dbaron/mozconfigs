@@ -144,6 +144,7 @@ fi
 
 # Stylo options
 if ! is_windows
+then
 	mk_add_options CARGOFLAGS="--color always" # if you want colored output from rust compilation
 fi
 if [ "$(uname -s)" = "Darwin" ]
