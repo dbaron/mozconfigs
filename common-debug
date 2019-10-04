@@ -5,6 +5,8 @@ ac_add_options --disable-optimize
 ac_add_options --enable-debug
 
 ac_add_options --enable-dmd
+# --enable-replace-malloc is required for --enable-dmd on non-nightly branches
+ac_add_options --enable-replace-malloc
 
 if_enable_jprof
 if_enable_callgrind
