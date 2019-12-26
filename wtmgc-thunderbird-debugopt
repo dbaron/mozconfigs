@@ -11,5 +11,3 @@
 
 export CFLAGS="$CFLAGS -DTOO_MUCH_GC -DWAY_TOO_MUCH_GC"
 export CXXFLAGS="$CXXFLAGS -DTOO_MUCH_GC -DWAY_TOO_MUCH_GC"
-
-ac_add_options --enable-official-branding
